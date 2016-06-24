@@ -1,33 +1,26 @@
 "  F2-Taste: Speichern
-map #2 :w
+map #2 :w<CR>
 "  F3-Taste: Zeilennummerierung umschalten
 "  		Relativ auf absolut
-map #3 :set rnu!
+map #3 :set rnu!<CR>
 "  F4-Taste: Zeilenumbruch umschalten
-map #4 :set lbr!
+map #4 :set lbr!<CR>
 "	"  F5-Taste: Syntax-Highlighting an
 "	:map #5 :syntax on
 "	"  F6-Taste: Syntax-Highliting aus
 "	:map #6 :syntax off
 "  F5-Taste: Zu HEX konvertieren
-map #5 :%!xxd:setf xxd
+map #5 :%!xxd<CR>:setf xxd<CR>
 "  F6-Taste: Von HEX zurück konvertieren
-map #6 :%!xxd -r:setf none:filetype detect
+map #6 :%!xxd -r<CR>:setf none<CR>:filetype detect<CR>
 "  F7-Taste: Aktuelle Zeile hervorheben ein/aus
-map #7 :set cursorline!
+map #7 :set cursorline!<CR>
 "  F8-Taste: Filetype erkennen
-map #8 :filetype detect
-"  F9-Taste: Speichern und Schließen
-map #9 :TOhtml
+map #8 :filetype detect<CR>
+"  F9-Taste: HTML-Code erzeugen
+map #9 :TOhtml<CR>
 
 set lbr
-
-" if has('gui_running')
-" 	colorscheme torte
-" 	set guifont=Ubuntu\ Mono\ 12	
-" else
-" 	colorscheme default
-" endif
 
 " http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 let mapleader = "\<Space>"
@@ -62,9 +55,15 @@ nmap <Leader><Leader>g zM
 " Search/Replace
 nmap <Leader>s :s//g<Left><Left>
 nmap <Leader><Leader>s :%s//g<Left><Left>
+nmap <Leader><Leader>c :%s///gn<Left><Left><Left><Left>
 vmap <Leader>s :s/\%V/g<Left><Left>
 " Windows/Tabs
 nmap <Leader>. <C-w>
+" Highlights entfernen
+nmap <Leader>/ :nohlsearch<CR>
+" Enter fuer neue Zeilen
+nmap <CR> o<Esc>k
+nmap <S-CR> O<Esc>j
 
 let html_use_css = 1
 " let html_number_lines = 0
@@ -81,7 +80,7 @@ if has('gui_running')
 
 	" au FocusLost * :set norelativenumber
 	" au FocusGained * :set relativenumber
-	
+	" 
 	" au InsertEnter * :set norelativenumber
 	" au InsertLeave * :set relativenumber
 
@@ -99,16 +98,29 @@ if has('gui_running')
 		set columns=120
 	endif
 
-	set guifont=Ubuntu\ Mono\ 12
+	if (has("unix"))
+		let s:uname = system("uname -s")
+		if (s:uname == "Darwin")
+			" mac stuff here
+		else
+			" linux stuff here
+			set guifont=Ubuntu\ Mono\ 12
+			map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
+		endif
+	else
+		" windows stuff here
+	endif
 
 	" set foldcolumn=1
-	
-	" Fullscreen toggle
-	map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
+
+	" Startup
+	" autocmd VimEnter * Ve
+	" autocmd VimEnter * vertical resize 35
 else
 	" Farbschema bei vim
 	" set background=dark
 	colorscheme default
+	syntax on
 endif
 
 if v:progname != "evim" && v:progname != "eview"
@@ -122,25 +134,33 @@ if v:progname != "evim" && v:progname != "eview"
 	set guioptions-=r
 	set guioptions-=L
 
-	" Maus deaktivieren
-	" set mouse=c
+	"Maus deaktivieren
+	set mouse=c
 
-	" Pfeiltasten deaktivieren
-	" nnoremap <Left> :echoe "Use h"<CR>
-	" nnoremap <Down> :echoe "Use j"<CR>
-	" nnoremap <Up> :echoe "Use k"<CR>
-	" nnoremap <Right> :echoe "Use l"<CR>
+	nnoremap <Left> :echoe "OMG VIM NOOB GTFO"<CR>
+	nnoremap <Down> :echoe "OMG VIM NOOB GTFO"<CR>
+	nnoremap <Up> :echoe "OMG VIM NOOB GTFO"<CR>
+	nnoremap <Right> :echoe "OMG VIM NOOB GTFO"<CR>
 endif
 
 " Encoding
 set encoding=utf-8
 set fileencoding=utf-8
 
+" Footer Bar
+set ruler
+set showcmd
+set hlsearch
+
 " Backups deaktivieren
 set nobackup
 
+" Indenting
+" set smartindent
+filetype plugin indent on
+
+" Smart Case sensitivity
 set autoindent
 set ignorecase
-filetype plugin indent on
-set showcmd
+set smartcase
 set incsearch
