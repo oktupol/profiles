@@ -99,8 +99,8 @@ if has('gui_running')
 	endif
 
 	if (has("unix"))
-		let s:uname = system("uname -s")
-		if (s:uname == "Darwin")
+		let uname = system("uname -s")
+		if (uname == "Darwin\n")
 			" mac stuff here
 		else
 			" linux stuff here
@@ -118,8 +118,21 @@ if has('gui_running')
 	" autocmd VimEnter * vertical resize 35
 else
 	" Farbschema bei vim
-	" set background=dark
-	colorscheme default
+	if (has("unix"))
+		let uname = system("uname -s")
+		if (uname == "Darwin\n")
+			" Mac stuff here
+			colorscheme molokai
+		else
+			" Linux stuff here
+			" Find out if 256 colors are possible
+			colorscheme default
+		endif
+	else
+		" Windows stuff here
+		" Find out if 256 colors are possible
+		colorscheme default
+	endif
 	syntax on
 endif
 
