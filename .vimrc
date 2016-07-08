@@ -123,6 +123,8 @@ else
 		if (uname == "Darwin\n")
 			" Mac stuff here
 			colorscheme molokai
+			set number
+			set cursorline
 		else
 			" Linux stuff here
 			" Find out if 256 colors are possible
