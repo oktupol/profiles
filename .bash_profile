@@ -17,6 +17,11 @@ export HISTFILESIZE=1000
 # Completion case insensitive
 bind 'set completion-ignore-case on'
 
+# Less syntax highlighting
+# first, execute 'brew install source-highlight'
+export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
+export LESS=' -R '
+
 # Alle Skripte im .sh Ordner einbinden
 if [ -d ~/.sh ]
 then
