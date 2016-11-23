@@ -65,6 +65,11 @@ nmap <Leader>/ :nohlsearch<CR>
 nmap <CR> o<Esc>k
 nmap <S-CR> O<Esc>j
 
+" Jump column down / up
+" http://vi.stackexchange.com/questions/120/how-do-i-move-vertically-until-reaching-a-non-whitespace-character
+nnoremap cd /\%<C-R>=virtcol(".")<CR>v\S<CR>:nohlsearch<CR>
+nnoremap cu ?\%<C-R>=virtcol(".")<CR>v\S<CR>:nohlsearch<CR>
+
 let html_use_css = 1
 " let html_number_lines = 0
 " let html_no_pre = 1
@@ -179,3 +184,6 @@ set autoindent
 set ignorecase
 set smartcase
 set incsearch
+
+" Tab width
+set tabstop=4
