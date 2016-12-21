@@ -13,6 +13,7 @@ __prompt_command() {
 	local nRed='\[\e[0;31m\]'
 	local lPurple='\[\e[1;95m\]'
 	local lBlue='\[\e[1;34m\]'
+	local dGray='\[\e[0;90m\]'
 	local dGreen='\[\e[2;32m\]'
 
 	# Date and time
@@ -31,6 +32,8 @@ __prompt_command() {
 
 	# Git branch
 	PS1+="${lBlue}$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')${RCol}"
+
+	PS1+="${dGray}$(git --no-pager log --oneline -n1 2> /dev/null | sed -e 's/\(.*\)/ [\1]/')${RCol}"
 
 	# Colon and new line
 	PS1+=":\n"
