@@ -110,3 +110,6 @@ alias top='htop'
 
 alias :e='vim'
 alias :q='exit'
+
+# Fuck
+eval "$(thefuck --alias)"
