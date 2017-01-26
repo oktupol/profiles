@@ -13,6 +13,7 @@ __prompt_command() {
 	local nRed='\[\e[0;31m\]'
 	local lPurple='\[\e[1;95m\]'
 	local lBlue='\[\e[1;34m\]'
+	local dBlue='\[\e[0;34m\]'
 	local dGray='\[\e[0;90m\]'
 	local dGreen='\[\e[2;32m\]'
 
