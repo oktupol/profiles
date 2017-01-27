@@ -15,6 +15,7 @@ __prompt_command() {
 	local lBlue='\[\e[1;34m\]'
 	local dBlue='\[\e[0;34m\]'
 	local dGray='\[\e[0;90m\]'
+	local lGreen='\[\e[1;32m\]'
 	local dGreen='\[\e[2;32m\]'
 
 	# Date and time
@@ -47,13 +48,6 @@ __prompt_command() {
 
 export PS2='\e[32m\e[2m>\e[22m\e[39m '
 
-# Farben in der Konsole
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
-
-# Standard-Editor
-export EDITOR=vim
-
 # History size
 export HISTSIZE=10000
 export HISTFILESIZE=1000
@@ -61,55 +55,11 @@ export HISTFILESIZE=1000
 # Completion case insensitive
 bind 'set completion-ignore-case on'
 
-# Less syntax highlighting
-# first, execute 'brew install source-highlight'
-export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
-export LESS=' -R '
-
-# Alle Skripte im .sh Ordner einbinden
-if [ -d ~/.sh ]
-then
-	for script in ~/.sh/*.sh
-	do
-		if [ -f $script ]
-		then
-			. $script
-		fi
-	done
-else
-	echo "Put your custom functions in ~/.sh/<function_name>.sh"
-fi
-
 
 # Aliase
 alias cd..='cd ..'
-
-alias exit='confirm && exit'
-
-alias gvim='open -a MacVim'
-
-alias l='ls'
-alias la='ls -a'
-alias lah='ls -lah | more'
-alias lh='ls -lh | more'
-alias lha='ls -lah | more'
-alias ll='ls -l'
-alias lla='ls -la'
-alias lm='ls -l | more'
-
-alias lsc='lcd'
-alias cls='cdl'
-
-alias launch='open'
-
-alias mvim='open -a MacVim'
-
-alias phpstorm='open -a PhpStorm'
 
 alias top='htop'
 
 alias :e='vim'
 alias :q='exit'
-
-# Fuck
-eval "$(thefuck --alias)"
