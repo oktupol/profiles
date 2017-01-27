@@ -116,4 +116,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-. .bash_profile
+. profiles/.bash_profile
