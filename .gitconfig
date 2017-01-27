@@ -1,0 +1,16 @@
+# This is Git's per-user configuration file.
+[core]
+	user = Sebastian Wieland
+	email = swieland@conexco.com
+[user]
+	name = Sebastian Wieland
+	email = swieland@conexco.com
+	signingkey = 8063BED0
+[core]
+	autocrlf = input
+	fileMode = false
+[alias]
+	revision = rev-list --count HEAD
+	hist = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr - %cD) %C(bold blue)<%an>%Creset%n %C(white dim)Signature %G? %GS %GK%Creset%n' --abbrev-commit
+[commit]
+	gpgsign = true
