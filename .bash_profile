@@ -15,6 +15,8 @@ __prompt_command() {
 	local lBlue='\[\e[1;34m\]'
 	local dBlue='\[\e[0;34m\]'
 	local dGray='\[\e[0;90m\]'
+	local nGreen='\[\e[0;32m\]'
+	local lGreen='\[\e[1;32m\]'
 	local dGreen='\[\e[2;32m\]'
 
 	# Date and time
@@ -30,22 +32,24 @@ __prompt_command() {
 	if [ $exitStatus -ne 0 ]; then
 			PS1+=" ${nRed}${exitStatus}${RCol}"
 	fi
+	
+	# Colon
+	PS1+=":"
 
-	# Git branch
-	PS1+="${lBlue}$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')${RCol}"
+	# If in git repository: New line and git branch
+	PS1+="${lBlue}$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \\(.*\\)/\n  (\\1)/")${RCol}"
 
+	# If in git repository: Last commit
 	PS1+="${dGray}$(git --no-pager log --oneline -n1 2> /dev/null | sed -e 's/\(.*\)/ [\1]/')${RCol}"
 
-	# Colon and new line
-	PS1+=":\n"
+	# new line
+	PS1+="\n"
 	
 	# Dollar
-	PS1+="${dGreen}\$${RCol}"
-
-	PS1+=" $(tput sgr0)"
+	PS1+="${dGreen}\$${RCol} "
 }
 
-export PS2='\e[32m\e[2m>\e[22m\e[39m '
+export PS2="${dGreen}>${rCol} "
 
 # Farben in der Konsole
 export CLICOLOR=1
