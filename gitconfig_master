@@ -1,10 +1,5 @@
 # This is Git's per-user configuration file.
-[core]
-	user = Sebastian Wieland
-	email = sebasti@nwie.land
 [user]
-	name = Sebastian Wieland
-	email = sebasti@nwie.land
 	signingkey = 8063BED0
 [core]
 	autocrlf = input
