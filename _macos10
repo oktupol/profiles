@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Less syntax highlighting
+# first, execute 'brew install source-highlight'
+export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
+export LESS=' -R '
+
+# Include all scripts in ~/.sh folder
+if [ -d ~/.sh ]
+then
+	for script in ~/.sh/*.sh
+	do
+		if [ -f $script ]
+		then
+			. $script
+		fi
+	done
+fi
+
+
+alias exit='confirm && exit'
+
+alias gvim='open -a MacVim'
+
+alias l='ls'
+alias la='ls -a'
+alias lah='ls -lah | more'
+alias lh='ls -lh | more'
+alias lha='ls -lah | more'
+alias ll='ls -l'
+alias lla='ls -la'
+alias lm='ls -l | more'
+
+alias lsc='lcd'
+alias cls='cdl'
+
+alias launch='open'
+
+alias mvim='open -a MacVim'
+
+alias phpstorm='open -a PhpStorm'
+
+# Fuck
+eval "$(thefuck --alias)"
+
+. ~/profiles/_master
