@@ -1,0 +1,51 @@
+#!/bin/bash
+
+PROMPT_COMMAND=__prompt_command
+
+__prompt_command() {
+	local exitStatus=$?
+
+	PS1=''
+
+	local RCol='\[\e[0m\]'
+
+	local nRed='\[\e[0;31m\]'
+	local lPurple='\[\e[1;95m\]'
+	local lBlue='\[\e[1;34m\]'
+	local dBlue='\[\e[0;34m\]'
+	local dGray='\[\e[0;90m\]'
+	local nGreen='\[\e[0;32m\]'
+	local lGreen='\[\e[1;32m\]'
+	local dGreen='\[\e[2;32m\]'
+
+	# Date and time
+	PS1+="${lPurple}\D{%Y-%m-%d %T}${RCol} "
+	
+	# User and directory
+	PS1+="\u:\w "
+
+	# History number of next command
+	PS1+="!\!"
+
+	# Exit code, if not zero
+	if [ $exitStatus -ne 0 ]; then
+			PS1+=" ${nRed}${exitStatus}${RCol}"
+	fi
+	
+	# Colon
+	PS1+=":"
+
+	# If in git repository: New line and git branch
+	PS1+="${lBlue}$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \\(.*\\)/\n  (\\1)/")${RCol}"
+
+	# If in git repository: Last commit
+	PS1+="${dGray}$(git --no-pager log --oneline -n1 2> /dev/null | sed -e 's/\(.*\)/ [\1]/')${RCol}"
+
+	# new line
+	PS1+="\n"
+	
+	# Dollar
+	PS1+="${dGreen}\$${RCol} "
+}
+
+export PS2="${dGreen}>${rCol} "
