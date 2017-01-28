@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# PROMPT_COMMAND defines function to be called at every command prompt
+# PS1 will look something like this:
+#
+# Time_and_date username:directory !history_number status_code:
+#    (git_branch) [git_most_recent_commit]
+# $
+#
+# Example
+#
+# 2017-01-28 12:57:07 sebastian:~/profiles !1035 1:
+#   (ubuntu1604) [c6de134 Added gpg -> gpg2 alias]
+# $
+#
+# If the status-code is zero, it's not displayed
+# If the current working directory is not in a git repository, the whole second line is omitted
+
 PROMPT_COMMAND=__prompt_command
 
 __prompt_command() {
