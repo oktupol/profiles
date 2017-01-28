@@ -5,19 +5,7 @@
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 export LESS=' -R '
 
-# Include all scripts in ~/.sh folder
-if [ -d ~/.sh ]
-then
-	for script in ~/.sh/*.sh
-	do
-		if [ -f $script ]
-		then
-			. $script
-		fi
-	done
-fi
-
-
+# Aliases
 alias exit='confirm && exit'
 
 alias gvim='open -a MacVim'
