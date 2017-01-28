@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Include all scripts in ~/.sh folder
+if [ -d ~/.sh ]
+then
+		for script in ~/.sh/*.sh
+		do
+				if [ -f $script ]
+				then
+						. $script
+				fi
+		done
+fi
+

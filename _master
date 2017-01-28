@@ -2,3 +2,4 @@
 
 . ~/profiles/prompt_command
 . ~/profiles/aliases
+. ~/profiles/scripts_directory
