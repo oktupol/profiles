@@ -1,0 +1,9 @@
+# This is Git's per-user configuration file.
+[core]
+	user = sebastian
+	email = sebasti@nwie.land
+[user]
+	name = Sebastian Wieland
+	email = sebasti@nwie.land
+[include]
+	path = ~/profiles/gitconfig_master
