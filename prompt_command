@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Konsole Text vor Kommando
 PROMPT_COMMAND=__prompt_command
 
 __prompt_command() {
@@ -25,10 +24,10 @@ __prompt_command() {
 	# User and directory
 	PS1+="\u:\w "
 
-	# History number
+	# History number of next command
 	PS1+="!\!"
 
-	# Exit code
+	# Exit code, if not zero
 	if [ $exitStatus -ne 0 ]; then
 			PS1+=" ${nRed}${exitStatus}${RCol}"
 	fi
@@ -50,19 +49,3 @@ __prompt_command() {
 }
 
 export PS2="${dGreen}>${rCol} "
-
-# History size
-export HISTSIZE=10000
-export HISTFILESIZE=1000
-
-# Completion case insensitive
-bind 'set completion-ignore-case on'
-
-
-# Aliase
-alias cd..='cd ..'
-
-alias top='htop'
-
-alias :e='vim'
-alias :q='exit'
