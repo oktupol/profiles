@@ -11,7 +11,7 @@ Also, there are some bash files (those without a period at the start of their na
 
 The master-branch contains files, which are prevalent on all operating systems I use (well, except Windows).
 
-All other branches, currently `ubuntu1604` and `macos10` contain os-specific files. These are named `_<branchname>` and include the `_master` file at their end.
+All other branches, currently `ubuntu1604`, `win10-bash` and `macos10` contain os-specific files. These are named `_<branchname>` and include the `_master` file at their end.
 These os-specific files are then included at the end of the `.bashrc` or `.bash_profile`, depending on the operating system.
 
 Feel free to copy whatevery you want, since I did the same ;)
