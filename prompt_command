@@ -40,25 +40,25 @@ __prompt_command() {
 	# User and directory
 	PS1+="\u:\w "
 
-	# History number of next command
-	PS1+="!\!"
-
 	# Exit code, if not zero
 	if [ $exitStatus -ne 0 ]; then
 			PS1+=" ${nRed}${exitStatus}${RCol}"
 	fi
-	
-	# Colon
-	PS1+=":"
 
 	# If in git repository: New line and git branch
-	PS1+="${lBlue}$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \\(.*\\)/\n  (\\1)/")${RCol}"
+	PS1+="${lBlue}$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \\(.*\\)/$(echo -e "\n")  (\\1)/g")${RCol}"
 
 	# If in git repository: Last commit
 	PS1+="${dGray}$(git --no-pager log --oneline -n1 2> /dev/null | sed -e 's/\(.*\)/ [\1]/')${RCol}"
 
 	# new line
 	PS1+="\n"
+
+	# History number of next command
+	PS1+="${dGray}!\!${RCol}"
+	
+	# Colon
+	PS1+=": "
 	
 	# Dollar
 	PS1+="${dGreen}\$${RCol} "
