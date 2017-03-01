@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Xdebug
+export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9000 remote_host=127.0.0.1 remote_connect_back=0"
+
 # Less syntax highlighting
 # first, execute 'brew install source-highlight'
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
