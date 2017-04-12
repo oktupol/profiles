@@ -6,7 +6,7 @@
 	fileMode = false
 [alias]
 	revision = rev-list --count HEAD
-	hist = log --color --graph --pretty=format:'%Cred%h%Creset - %Cgreen(%cD - %cr) %C(yellow)%d%Creset %s%Creset%n          %C(bold blue)<%an> %C(white dim)gpg signature %G? %GS %GK%Creset%n' --abbrev-commit --date-order
+	hist = log --color --graph --pretty=format:'%Cred%h%Creset - %Cgreen(%cD - %cr) %C(yellow)%d%Creset %s%Creset%n          %C(bold blue)<%an> %C(white dim)gpg signature %G? %GS %GK%Creset%n' --abbrev-commit --date-order --all
 [commit]
 	gpgsign = true
 [push]
