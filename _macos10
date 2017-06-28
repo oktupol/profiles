@@ -31,6 +31,8 @@ alias mvim='open -a MacVim'
 
 alias phpstorm='open -a PhpStorm'
 
+alias g='env BROWSER=lynx googler -n 5'
+
 if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
 		source ~/.gnupg/.gpg-agent-info
 		export GPG_AGENT_INFO
