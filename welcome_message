@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if hash fortune 2>/dev/null && hash cowsay 2>/dev/null; then
+	fortune | cowsay
+fi

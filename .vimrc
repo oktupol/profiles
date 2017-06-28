@@ -187,3 +187,11 @@ set incsearch
 
 " Tab width
 set tabstop=4
+set shiftwidth=4
+set noexpandtab
+
+" Macros
+
+" Prefix sql columns in select with whatever stands in the first line of the
+" buffer.
+let @m='ggywjwG0x:%s/].*$//gggjVG$yA				a				pggywjwGwIAS "_ggywjGI".kdd:%s/\s\+/ /gggI''G$A'','
