@@ -3,3 +3,4 @@
 . ~/profiles/prompt_command
 . ~/profiles/aliases
 . ~/profiles/scripts_directory
+. ~/profiles/welcome_message
