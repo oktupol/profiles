@@ -65,4 +65,4 @@ __prompt_command() {
 }
 
 # Multiline commands
-export PS2="  ${dGreen}>${rCol} "
+export PS2="       ${dGreen}>${rCol} "
