@@ -61,7 +61,7 @@ __prompt_command() {
 	PS1+=": "
 	
 	# Dollar
-	PS1+="${dGreen}\$${RCol} "
+	PS1+="${dGreen}£${RCol} "
 }
 
 # Multiline commands
