@@ -9,14 +9,6 @@ install_plugin() {
 
 	local pluginname=$1
 	local pluginnamelc=$(echo $1 | awk '{print tolower($0)}')
-	# local prefix=${pluginname:0:3}
 
-	git clone git@bitbucket.org:conexco/$pluginnamelc\.git $pluginname
-	# if [ "$prefix" = "Swf" ]; then
-	# 	git clone git@bitbucket.org:conexco/$pluginnamelc\.git $pluginname
-	# elif [ "$prefix" = "Cxo" ]; then
-	# 	git clone git@bitbucket.org:conexco/$pluginnamelc\.git $pluginname
-	# else
-	#	echo "Prefix $prefix unknown"
-	# fi
+	git clone --depth=1 git@bitbucket.org:conexco/$pluginnamelc\.git $pluginname
 }

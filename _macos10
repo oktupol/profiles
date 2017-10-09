@@ -47,4 +47,7 @@ fi
 # Fuck
 eval "$(thefuck --alias)"
 
+# Add more cows
+COWPATH="$COWPATH:$HOME/.cowsay"
+
 . ~/profiles/_master
