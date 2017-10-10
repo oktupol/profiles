@@ -60,7 +60,7 @@ __prompt_command() {
 	# Colon
 	PS1+=": "
 	
-	# Dollar
+	# Pound Sterling
 	PS1+="${dGreen}£${RCol} "
 }
 
