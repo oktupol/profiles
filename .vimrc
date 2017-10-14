@@ -1,14 +1,23 @@
-"  F2-Taste: Speichern
-map #2 :w<CR>
-"  F3-Taste: Zeilennummerierung umschalten
-"  		Relativ auf absolut
-map #3 :set rnu!<CR>
-"  F4-Taste: Zeilenumbruch umschalten
-map #4 :set lbr!<CR>
-"	"  F5-Taste: Syntax-Highlighting an
-"	:map #5 :syntax on
-"	"  F6-Taste: Syntax-Highliting aus
-"	:map #6 :syntax off
+" Vundle.vim
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+call vundle#end()
+filetype plugin indent on
+
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" 
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
 "  F5-Taste: Zu HEX konvertieren
 map #5 :%!xxd<CR>:setf xxd<CR>
 "  F6-Taste: Von HEX zurück konvertieren
