@@ -199,6 +199,10 @@ set tabstop=4
 set shiftwidth=4
 set noexpandtab
 
+" Spell checking
+set spell
+set spelllang=en_gb
+
 " Macros
 
 " Prefix sql columns in select with whatever stands in the first line of the
