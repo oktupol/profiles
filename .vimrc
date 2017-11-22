@@ -14,6 +14,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 
+Plugin 'elzr/vim-json'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -26,6 +28,9 @@ filetype plugin indent on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" Markdown Plugin
+let g:vim_markdown_folding_level=3
+set conceallevel=2
 
 "  F5-Taste: Zu HEX konvertieren
 map #5 :%!xxd<CR>:setf xxd<CR>
