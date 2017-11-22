@@ -14,4 +14,6 @@ export HISTFILESIZE=1000
 # Completion case insensitive
 bind 'set completion-ignore-case on'
 
+export PATH="$PATH:~/.bin"
+
 . ~/profiles/_macos10
