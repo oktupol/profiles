@@ -32,6 +32,8 @@ filetype plugin indent on
 let g:vim_markdown_folding_level=3
 set conceallevel=2
 
+" Continue with next file in git difftool on hitting f4
+map <silent> #4 :if &diff<CR>qa<CR>endif<CR>
 "  F5-Taste: Zu HEX konvertieren
 map #5 :%!xxd<CR>:setf xxd<CR>
 "  F6-Taste: Von HEX zurück konvertieren
