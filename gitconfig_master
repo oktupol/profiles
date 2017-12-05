@@ -12,3 +12,9 @@
 	gpgsign = true
 [push]
 	default = simple
+[diff]
+	tool = vimdiff
+	guitool = gvimdiff
+[difftool]
+	prompt = false
+	trustExitCode = true
