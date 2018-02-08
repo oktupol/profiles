@@ -13,8 +13,15 @@ Plugin 'plasticboy/vim-markdown'
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
+Bundle 'christoomey/vim-conflicted'
+
+Plugin 'jamessan/vim-gnupg'
 
 Plugin 'elzr/vim-json'
+
+Plugin 'ekalinin/Dockerfile.vim'
+
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 call vundle#end()
 filetype plugin indent on
@@ -29,8 +36,8 @@ filetype plugin indent on
 " Put your non-Plugin stuff after this line
 
 " Markdown Plugin
-let g:vim_markdown_folding_level=3
-set conceallevel=2
+" let g:vim_markdown_folding_level=3
+" set conceallevel=2
 
 " Continue with next file in git difftool on hitting f4
 map <silent> #4 :if &diff<CR>qa<CR>endif<CR>
@@ -119,6 +126,9 @@ if has('gui_running')
 
 	" Aktuelle Zeile hervorheben
 	set cursorline
+	" Mark 80th column
+	set cc=80
+
 
 	if &diff
 		set lines=999
@@ -155,6 +165,8 @@ else
 			colorscheme molokai
 			set number
 			set cursorline
+			" Mark 80th column
+			set cc=80
 		else
 			" Linux stuff here
 			" Find out if 256 colors are possible
@@ -180,7 +192,7 @@ if v:progname != "evim" && v:progname != "eview"
 	set guioptions-=L
 
 	"Maus deaktivieren
-	set mouse=c
+	"set mouse=c
 
 	nnoremap <Left> :echoe "OMG VIM NOOB GTFO"<CR>
 	nnoremap <Down> :echoe "OMG VIM NOOB GTFO"<CR>
