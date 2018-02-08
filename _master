@@ -5,3 +5,4 @@
 . ~/profiles/aliases
 . ~/profiles/scripts_directory
 . ~/profiles/welcome_message
+. ~/profiles/editing_mode
