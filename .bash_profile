@@ -9,7 +9,9 @@ export EDITOR=vim
 
 # History size
 export HISTSIZE=10000
-export HISTFILESIZE=1000
+export HISTFILESIZE=5000
+export HISTCONTROL=erasedups
+shopt -s histappend
 
 # Completion case insensitive
 bind 'set completion-ignore-case on'

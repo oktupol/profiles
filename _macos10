@@ -26,12 +26,15 @@ alias lsc='lcd'
 alias cls='cdl'
 
 alias launch='open'
+alias lockscreen='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 
 alias mvim='open -a MacVim'
 
 alias phpstorm='open -a PhpStorm'
 
 alias g='env BROWSER=lynx googler -n 5'
+
+alias dog='gsed "s/\w\+/woof/g"'
 
 if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
 		source ~/.gnupg/.gpg-agent-info
