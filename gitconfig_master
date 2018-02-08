@@ -18,3 +18,9 @@
 [difftool]
 	prompt = false
 	trustExitCode = true
+[merge]
+	tool = vimdiff
+	guitool = gvimdiff
+[mergetool]
+	prompt = false
+	trustExitCode = true
