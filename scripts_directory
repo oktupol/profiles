@@ -5,9 +5,9 @@ if [ -d ~/.sh ]
 then
 		for script in ~/.sh/*.sh
 		do
-				if [ -f $script ]
+				if [ -f "$script" ]
 				then
-						. $script
+						. "$script"
 				fi
 		done
 fi
