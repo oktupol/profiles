@@ -36,6 +36,8 @@ alias g='env BROWSER=lynx googler -n 5'
 
 alias dog='gsed "s/\w\+/woof/g"'
 
+alias server-info="ssh playground 'docker ps --format {{.Names}} | grep __shop | grep -o ^[a-z]* --color=never'"
+
 if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
 		source ~/.gnupg/.gpg-agent-info
 		export GPG_AGENT_INFO
@@ -52,5 +54,7 @@ eval "$(thefuck --alias)"
 
 # Add more cows
 COWPATH="$COWPATH:$HOME/.cowsay"
+
+export PATH="/Applications/MacVim.app/Contents/bin:$PATH"
 
 . ~/profiles/_master

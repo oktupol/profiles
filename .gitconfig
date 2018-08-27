@@ -8,8 +8,8 @@
 [include]
 	path = ~/profiles/gitconfig_master
 [difftool "phpstorm"]
-	cmd = '/Users/swieland/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/172.4155.41/PhpStorm.app/Contents/MacOS/phpstorm' diff "$(cd $(dirname $LOCAL) && pwd)/$(basename $LOCAL)" "$(cd $(dirname $REMOTE) && pwd)/$(basename $REMOTE)" >/dev/null
+	cmd = '/Users/swieland/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/181.4445.72/PhpStorm.app/Contents/MacOS/phpstorm' diff "$(cd $(dirname $LOCAL) && pwd)/$(basename $LOCAL)" "$(cd $(dirname $REMOTE) && pwd)/$(basename $REMOTE)" >/dev/null
 	trustExitCode = true
 [mergetool "phpstorm"]
-	cmd = '/Users/swieland/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/172.4155.41/PhpStorm.app/Contents/MacOS/phpstorm' merge "$(cd $(dirname $LOCAL) && pwd)/$(basename $LOCAL)" "$(cd $(dirname $REMOTE) && pwd)/$(basename $REMOTE)" "$(cd $(dirname $BASE) && pwd)/$(basename $BASE)" "$(cd $(dirname $MERGED) && pwd)/$(basename $MERGED)" >/dev/null
+	cmd = '/Users/swieland/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/181.4445.72/PhpStorm.app/Contents/MacOS/phpstorm' merge "$(cd $(dirname $LOCAL) && pwd)/$(basename $LOCAL)" "$(cd $(dirname $REMOTE) && pwd)/$(basename $REMOTE)" "$(cd $(dirname $BASE) && pwd)/$(basename $BASE)" "$(cd $(dirname $MERGED) && pwd)/$(basename $MERGED)" >/dev/null
 	trustExitCode = true
