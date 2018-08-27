@@ -23,6 +23,8 @@ Plugin 'ekalinin/Dockerfile.vim'
 
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
+Plugin 'kshenoy/vim-signature'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -102,6 +104,8 @@ nmap <S-CR> O<Esc>j
 nnoremap cd /\%<C-R>=virtcol(".")<CR>v\S<CR>:nohlsearch<CR>
 nnoremap cu ?\%<C-R>=virtcol(".")<CR>v\S<CR>:nohlsearch<CR>
 
+command FormatJson setf json | %!python -m json.tool
+
 let html_use_css = 1
 " let html_number_lines = 0
 " let html_no_pre = 1
@@ -135,7 +139,7 @@ if has('gui_running')
 		set columns=999
 	else
 		set lines=35
-		set columns=120
+		set columns=116
 	endif
 
 	if (has("unix"))
