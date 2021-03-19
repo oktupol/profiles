@@ -1,5 +1,5 @@
 #!/bin/bash
 
-alias gpg="gpg2"
+# alias gpg="gpg2"
 
 . ~/profiles/_master

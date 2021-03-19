@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/profiles/update_profiles
+# . ~/profiles/update_profiles
 . ~/profiles/prompt_command
 . ~/profiles/aliases
 . ~/profiles/scripts_directory

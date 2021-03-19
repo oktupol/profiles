@@ -35,21 +35,21 @@ __prompt_command() {
 	local dGreen='\[\e[2;32m\]'
 
 	# Date and time
-	PS1+="${lPurple}\D{%Y-%m-%d %T}${RCol} "
+	PS1+="${lGreen}\D{%Y-%m-%d %T}${RCol} "
 	
 	# User and directory
 	PS1+="\u:\w "
 
 	# Exit code, if not zero
 	if [ $exitStatus -ne 0 ]; then
-			PS1+=" ${nRed}${exitStatus}${RCol}"
+			PS1+="${nRed}${exitStatus}${RCol} "
 	fi
 
 	# If in git repository: New line and git branch
-	PS1+="${lBlue}$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \\(.*\\)/$(echo -e "\n")  (\\1)/g")${RCol}"
+	PS1+="${lBlue}$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \\(.*\\)/(\\1) /g")${RCol}"
 
 	# If in git repository: Last commit
-	PS1+="${dGray}$(git --no-pager log --oneline -n1 2> /dev/null | sed -e 's/\(.*\)/ [\1]/')${RCol}"
+	PS1+="${dGray}$(git --no-pager log --oneline -n1 2> /dev/null | sed -e 's/\(.*\)/\n[\1] /')${RCol}"
 
 	# new line
 	PS1+="\n"
