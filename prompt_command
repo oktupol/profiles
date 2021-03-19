@@ -47,7 +47,7 @@ __prompt_command() {
 	fi
 
 	# If in git repository: New line and git branch
-	PS1+="${lBlue}$(__git_ps1 %s)${RCol}"
+	PS1+="${lBlue}$(__git_ps1 '(%s)')${RCol}"
 
 	# If in git repository: Last commit
 	# PS1+="${dGray}$(git rev-parse --short HEAD 2> /dev/null | sed -e 's/.*/\0 /')${RCol}"
