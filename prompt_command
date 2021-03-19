@@ -17,6 +17,7 @@
 # If the current working directory is not in a git repository, the whole second line is omitted
 
 PROMPT_COMMAND=__prompt_command
+export GIT_PS1_SHOWDIRTYSTATE=1 
 
 __prompt_command() {
 	local exitStatus=$?
@@ -35,10 +36,10 @@ __prompt_command() {
 	local dGreen='\[\e[2;32m\]'
 
 	# Date and time
-	PS1+="${lGreen}\D{%Y-%m-%d %T}${RCol} "
+	PS1+="${lPurple}\D{%Y-%m-%d %T}${RCol} "
 	
 	# User and directory
-	PS1+="\u:\w "
+	PS1+="${lGreen}\u@\h${RCol}:\w "
 
 	# Exit code, if not zero
 	if [ $exitStatus -ne 0 ]; then
@@ -46,10 +47,11 @@ __prompt_command() {
 	fi
 
 	# If in git repository: New line and git branch
-	PS1+="${lBlue}$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \\(.*\\)/(\\1) /g")${RCol}"
+	PS1+="${lBlue}$(__git_ps1 %s)${RCol}"
 
 	# If in git repository: Last commit
-	PS1+="${dGray}$(git --no-pager log --oneline -n1 2> /dev/null | sed -e 's/\(.*\)/\n[\1] /')${RCol}"
+	# PS1+="${dGray}$(git rev-parse --short HEAD 2> /dev/null | sed -e 's/.*/\0 /')${RCol}"
+	PS1+="${dGray}$(git --no-pager log --oneline -n1 2> /dev/null | sed -e 's/\(.*\)/\nHEAD: \1 /')${RCol}"
 
 	# new line
 	PS1+="\n"
@@ -65,4 +67,4 @@ __prompt_command() {
 }
 
 # Multiline commands
-export PS2="       ${dGreen}>${rCol} "
+export PS2='      \[\e[2;32m\]>\[\e[0m\] '
